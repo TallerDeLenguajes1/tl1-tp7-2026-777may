@@ -5,7 +5,7 @@ namespace EspacioCalculadora
         private double dato;
         public double Resultado
         {
-            get => dato; 
+            get => dato;
         }
 
         public void Sumar(double termino)
@@ -27,6 +27,10 @@ namespace EspacioCalculadora
         public void Limpiar()
         {
             dato = 0;
+        }
+        public static bool ValidarDivisor(double termino)
+        {
+            return termino != 0;
         }
     }
 }
