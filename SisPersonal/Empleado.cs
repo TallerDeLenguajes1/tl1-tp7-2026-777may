@@ -1,5 +1,16 @@
 namespace Empleados
 {
+
+//     public class Empleado
+// {
+//     public string Nombre { get; set; }
+//     public string Apellido { get; set; }
+//     public DateTime FechaDeNacimiento { get; set; }
+//     public EstadoCivil EstadoCivil { get; set; }
+//     public DateTime FechaDeIngreso { get; set; }
+//     public double SueldoBasico { get; set; }
+//     public Cargos Cargo { get; set; }
+// }
     class Empleado
     {
         string nombre;
@@ -28,11 +39,11 @@ namespace Empleados
         this.fechaIngresoEmpresa = fechaIngreso;
         this.sueldoBasico = sueldo;
         this.cargo = cargo;
-    }+
+    }
 // En C#, cuando un método no recibe parámetros y solo calcula un dato interno (como Edad() o Antiguedad()), se acostumbra transformarlo en una Propiedad de solo lectura.
         public int Antiguedad => AniosCumplidos(fechaIngresoEmpresa);
         public int Edad => AniosCumplidos(fechaDeNacimiento);
-        public int EdadParaJubilarse => 65-Edad;
+        public int EdadParaJubilarse => (65<=Edad) ? 0 : 65-Edad;
         private int AniosCumplidos(DateOnly anio)
         {
             DateOnly hoy = DateOnly.FromDateTime(DateTime.Now);
@@ -57,7 +68,7 @@ namespace Empleados
             }
             if(cargo == Cargos.Ingeniero ||  cargo == Cargos.Especialista)
             {
-                adicional += adicional/2m;
+                adicional *= 1.5m;
             }
             if(estadoCivil == 'C')
             {

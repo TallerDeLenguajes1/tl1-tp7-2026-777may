@@ -8,4 +8,13 @@ namespace Empleados
         Especialista,
         Investigador
     }
+ 
+    // enum Operacion
+    // {
+    //     Suma,
+    //     Resta,
+    //     Multiplicacion,
+    //     Division
+    // }
 }
+
